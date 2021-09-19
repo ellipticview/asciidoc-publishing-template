@@ -18,6 +18,7 @@ Your Asciidoc source may reference images, as shown in the example above. Asciid
 
 . Embed the images in the HTML file using the https://docs.asciidoctor.org/asciidoctor/latest/html-backend/manage-images/[data-uri attribute]. This is the approach used here.
 . Put the images _and_ the Asciidoc sources in the /docs directory. The publish step will copy the directory contents across to gh-pages. A slight drawback of this method: it will also copy the Asciidoc sources.
+. Use Antora.
 
 === Notes on the GitHub Pages action
 See documentation at https://github.com/peaceiris/actions-gh-pages
