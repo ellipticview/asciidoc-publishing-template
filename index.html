@@ -454,7 +454,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_notes_on_how_it_works">3. Notes on how it works</a>
 <ul class="sectlevel2">
-<li><a href="#_notes_on_github_pages_action">3.1. Notes on GitHub Pages action</a></li>
+<li><a href="#_notes_on_asciidoctor">3.1. Notes on Asciidoctor</a></li>
+<li><a href="#_notes_on_the_github_pages_action">3.2. Notes on the GitHub Pages action</a></li>
 </ul>
 </li>
 </ul>
@@ -629,9 +630,44 @@ git push -u origin main</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_notes_on_github_pages_action">3.1. Notes on GitHub Pages action</h3>
+<h3 id="_notes_on_asciidoctor">3.1. Notes on Asciidoctor</h3>
+<div class="sect3">
+<h4 id="_single_page_output">3.1.1. Single Page Output</h4>
 <div class="paragraph">
-<p><a href="https://github.com/peaceiris/actions-gh-pages" class="bare">https://github.com/peaceiris/actions-gh-pages</a></p>
+<p>This approach generates a single HTML file. If you want to generate a separate file per section, then look into these options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/owenh000/asciidoctor-multipage">Asciidoctor multipage plugin</a></p>
+</li>
+<li>
+<p><a href="https://antora.org/" class="bare">https://antora.org/</a>[Antora</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_managing_images">3.1.2. Managing Images</h4>
+<div class="paragraph">
+<p>Your Asciidoc source may reference images, as shown in the example above. Asciidoctor does not copy images from the source directory to the target directory. There are several solutions here:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Embed the images using the <a href="https://docs.asciidoctor.org/asciidoctor/latest/html-backend/manage-images/">data-uri attribute</a>. This is the approach used here.</p>
+</li>
+<li>
+<p>Put the images and the Asciidoc sources in the /docs directory. The publish step will copy the directory contents across to gh-pages. A drawback of this method: it will also copy the Asciidoc sources.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notes_on_the_github_pages_action">3.2. Notes on the GitHub Pages action</h3>
+<div class="paragraph">
+<p>See documentation at <a href="https://github.com/peaceiris/actions-gh-pages" class="bare">https://github.com/peaceiris/actions-gh-pages</a></p>
 </div>
 </div>
 </div>
@@ -639,7 +675,7 @@ git push -u origin main</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-19 12:33:09 UTC
+Last updated 2021-09-19 12:36:31 UTC
 </div>
 </div>
 </body>
