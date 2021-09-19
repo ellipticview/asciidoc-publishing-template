@@ -1,0 +1,1 @@
+This repository is an example of how to publish your Asciidoc documentation on GitHub Pages.

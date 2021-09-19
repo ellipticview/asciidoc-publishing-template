@@ -1,0 +1,20 @@
+= Publishing AsciiDoc documentation from a GitHub repo
+:doctype: article
+:encoding: utf-8
+:lang: en
+:toc: left
+:numbered:
+
+
+== Introduction
+This repository is an example of how to publish your Asciidoc documentation on GitHub Pages.
+This allows you to easily include code snippets in your documentation. E.g. if this was an HTML tutorial, we could include the code as:
+
+.src/html/hello-world.html
+----
+include::../html/hello-world.html[]
+----
+
+include::steps.adoc[]
+
+include::notes.adoc[]

@@ -1,1 +1,0 @@
-# asciidoc-publishing-template
