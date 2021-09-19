@@ -28,11 +28,14 @@ mkdir src\docs
 mkdir .github
 mkdir .github\workflows
 ----
-. Edit README.adoc
-. Create src/docs/index.adoc +
+. Edit `README.adoc`
+. Create `src/docs/index.adoc` +
   You can use the file in this repo as an example
-. Create file .github/workflows/build-asciidoc.yml +
-  Copy the contents of the same file in this repo.
+. Create file `.github/workflows/build-asciidoc.yml` as 
++
+----
+include::../../.github/workflows/build-asciidoc.yml[]
+----
 . Add these new files to the repository:
 +
 ----
