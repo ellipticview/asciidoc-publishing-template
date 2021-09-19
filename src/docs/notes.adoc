@@ -5,8 +5,21 @@ The workflow contains two steps as shown below.
 
 image::workflow.dio.svg[]
 
+=== Notes on Asciidoctor
 
-=== Notes on GitHub Pages action
-https://github.com/peaceiris/actions-gh-pages
+==== Single Page Output
+This approach generates a single HTML file. If you want to generate a separate file per section, then look into these options:
+
+- https://github.com/owenh000/asciidoctor-multipage[Asciidoctor multipage plugin]
+- https://antora.org/[Antora
+
+==== Managing Images
+Your Asciidoc source may reference images, as shown in the example above. Asciidoctor does not copy images from the source directory to the target directory. There are several solutions here:
+
+. Embed the images using the https://docs.asciidoctor.org/asciidoctor/latest/html-backend/manage-images/[data-uri attribute]. This is the approach used here.
+. Put the images and the Asciidoc sources in the /docs directory. The publish step will copy the directory contents across to gh-pages. A drawback of this method: it will also copy the Asciidoc sources.
+
+=== Notes on the GitHub Pages action
+See documentation at https://github.com/peaceiris/actions-gh-pages
 
 
