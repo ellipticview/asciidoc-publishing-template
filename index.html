@@ -555,15 +555,43 @@ mkdir .github\workflows</pre>
 </div>
 </li>
 <li>
-<p>Edit README.adoc</p>
+<p>Edit <code>README.adoc</code></p>
 </li>
 <li>
-<p>Create src/docs/index.adoc<br>
+<p>Create <code>src/docs/index.adoc</code><br>
 You can use the file in this repo as an example</p>
 </li>
 <li>
-<p>Create file .github/workflows/build-asciidoc.yml<br>
-Copy the contents of the same file in this repo.</p>
+<p>Create file <code>.github/workflows/build-asciidoc.yml</code> as</p>
+<div class="listingblock">
+<div class="content">
+<pre>name: build adocs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+jobs:
+  adoc_build:
+    runs-on: ubuntu-latest
+    name: Asciidoctoring the docs to pretty HTML
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Get build container
+      id: adocbuild
+      uses: avattathil/asciidoctor-action@master
+      with:
+          program: "asciidoctor --destination-dir=docs --backend=html5 --out-file=index.html --attribute=data-uri src/docs/index.adoc"
+    - name: Deploy docs to ghpages
+      uses: peaceiris/actions-gh-pages@v3
+      with: 
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./docs/</pre>
+</div>
+</div>
 </li>
 <li>
 <p>Add these new files to the repository:</p>
@@ -642,7 +670,7 @@ git push -u origin main</pre>
 <p><a href="https://github.com/owenh000/asciidoctor-multipage">Asciidoctor multipage plugin</a></p>
 </li>
 <li>
-<p><a href="https://antora.org/" class="bare">https://antora.org/</a>[Antora</p>
+<p><a href="https://antora.org/">Antora</a></p>
 </li>
 </ul>
 </div>
@@ -655,10 +683,10 @@ git push -u origin main</pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Embed the images using the <a href="https://docs.asciidoctor.org/asciidoctor/latest/html-backend/manage-images/">data-uri attribute</a>. This is the approach used here.</p>
+<p>Embed the images in the HTML file using the <a href="https://docs.asciidoctor.org/asciidoctor/latest/html-backend/manage-images/">data-uri attribute</a>. This is the approach used here.</p>
 </li>
 <li>
-<p>Put the images and the Asciidoc sources in the /docs directory. The publish step will copy the directory contents across to gh-pages. A drawback of this method: it will also copy the Asciidoc sources.</p>
+<p>Put the images <em>and</em> the Asciidoc sources in the /docs directory. The publish step will copy the directory contents across to gh-pages. A slight drawback of this method: it will also copy the Asciidoc sources.</p>
 </li>
 </ol>
 </div>
@@ -675,7 +703,7 @@ git push -u origin main</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-19 12:36:31 UTC
+Last updated 2021-09-19 12:47:54 UTC
 </div>
 </div>
 </body>
