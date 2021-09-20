@@ -5,6 +5,9 @@ The workflow contains two steps as shown below.
 
 image::workflow.dio.svg[]
 
+Manual triggering of the workflow is enabled by adding https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/[workflow_dispatch].
+
+
 === Notes on Asciidoctor
 
 ==== Single Page Output

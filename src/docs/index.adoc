@@ -11,6 +11,7 @@ This repository is an example of how to publish your Asciidoc documentation on G
 This allows you to easily include code snippets in your documentation. E.g. if this was an HTML tutorial, we could include the code as:
 
 .src/html/hello-world.html
+[source,html]
 ----
 include::../html/hello-world.html[]
 ----
