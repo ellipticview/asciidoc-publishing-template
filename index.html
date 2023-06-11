@@ -497,13 +497,9 @@ This allows you to easily include code snippets in your documentation. E.g. if t
 </li>
 <li>
 <p>Click Create Repository</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>After the repository is created, click on the green Code button and click on the disk icon to copy the URL.</p>
 </li>
-</ol>
-</div>
+<li>
+<p>As we will be using , we need to configure access. Under Settings &gt; Actions &gt; General &gt; Workflow permissions, select <strong>Read and write permissions</strong> and press [Save].</p>
 </li>
 </ol>
 </div>
@@ -512,6 +508,9 @@ This allows you to easily include code snippets in your documentation. E.g. if t
 <h3 id="_clone_to_local_repository">2.2. Clone to local repository</h3>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>After the repository is created, click on the green Code button and click Local &gt; HTTPS to copy the URL.</p>
+</li>
 <li>
 <p>Navigate to the folder in which you want to create a new folder with the repository.</p>
 </li>
@@ -606,16 +605,19 @@ git push -u origin main</pre>
 </div>
 </div>
 </li>
+<li>
+<p>On GitHub.com, navigate to the Actions tab. You will probably see a failed run of the of the workflow. See instructions on <a href="https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token" class="bare">https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token</a></p>
+</li>
 </ol>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_configure_github_pages">2.4. Configure GitHub Pages</h3>
+<div class="paragraph">
+<p>The Asciidoc source has been rendered to HTML in branch <code>gh-pages</code>.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
-<li>
-<p>On GitHub.com, navigate to the Actions tab. You will hopefully see a successful run of the workflow. The Asciidoc source has been rendered to HTML in branch <code>gh-pages</code>.</p>
-</li>
 <li>
 <p>Navigate to Settings &gt; Pages.</p>
 </li>
@@ -632,7 +634,7 @@ git push -u origin main</pre>
 <p>On the right hand side (About), click on the Settings icon.</p>
 </li>
 <li>
-<p>Paste the URL in the website field and press Save.</p>
+<p>Set the website field to <strong>Use your GitHub Pages website</strong> and press Save.</p>
 </li>
 </ol>
 </div>
@@ -705,7 +707,7 @@ git push -u origin main</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-06-11 11:08:19 UTC
+Last updated 2023-06-11 12:18:30 UTC
 </div>
 </div>
 </body>
