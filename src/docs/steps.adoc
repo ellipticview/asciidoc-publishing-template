@@ -3,9 +3,10 @@
 . Login to GitHub, click on New and give the repository a name.
 . Add a README. Although we'll be renaming this file later, the repo needs at least one file in order to have a default branch.
 . Click Create Repository
-.. After the repository is created, click on the green Code button and click on the disk icon to copy the URL.
+. As we will be using , we need to configure access. Under Settings > Actions > General > Workflow permissions, select *Read and write permissions* and press [Save].
 
 === Clone to local repository
+. After the repository is created, click on the green Code button and click Local > HTTPS to copy the URL.
 . Navigate to the folder in which you want to create a new folder with the repository.
 . Clone the repository using the URL previously copied:
 +
@@ -48,12 +49,17 @@ git commit -m "Initial Structure"
 git push -u origin main
 ----
 
+. On GitHub.com, navigate to the Actions tab. You will probably see a failed run of the of the workflow. See instructions on https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-first-deployment-with-github_token
+
+
 === Configure GitHub Pages
-. On GitHub.com, navigate to the Actions tab. You will hopefully see a successful run of the workflow. The Asciidoc source has been rendered to HTML in branch `gh-pages`.
+
+The Asciidoc source has been rendered to HTML in branch `gh-pages`.
+
 . Navigate to Settings > Pages.
 . Set the source to gh-pages (root) and save.
 . At the top you will see the site URL. Copy it.
 . Click on the code tab
 . On the right hand side (About), click on the Settings icon.
-. Paste the URL in the website field and press Save.
+. Set the website field to *Use your GitHub Pages website* and press Save.
 
